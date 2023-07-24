@@ -384,7 +384,7 @@ public class FirstPersonController : MonoBehaviour
                 isWalking = false;
             }
 
-            // All movement calculations shile sprint is active
+            // All movement calculations while sprint is active
             if (enableSprint && Input.GetKey(sprintKey) && sprintRemaining > 0f && !isSprintCooldown)
             {
                 targetVelocity = transform.TransformDirection(targetVelocity) * sprintSpeed;
@@ -473,6 +473,11 @@ public class FirstPersonController : MonoBehaviour
         {
             Crouch();
         }
+    }
+
+    public bool isJumping()
+    {
+        return !isGrounded;
     }
 
     private void Crouch()
