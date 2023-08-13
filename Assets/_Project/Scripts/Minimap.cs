@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Minimap : MonoBehaviour
 {
-    [SerializeField] private FirstPersonController fpsController;
+    //[SerializeField] private FirstPersonController fpsController;
     public Transform player;
     private float cameraHeightOffset;
     [SerializeField] private Camera targetCamera;
@@ -20,10 +20,10 @@ public class Minimap : MonoBehaviour
     {
         //Make camera position.x and z same with player
         //Camera follows player
-        if(!fpsController.isJumping())
-        {
-            cameraHeight = cameraHeightOffset + player.position.y;
-        }
+        //if(!fpsController.isJumping())
+        //{
+        //    cameraHeight = cameraHeightOffset + player.position.y;
+        //}
 
         transform.position = new Vector3(player.position.x, cameraHeight, player.position.z);
 
