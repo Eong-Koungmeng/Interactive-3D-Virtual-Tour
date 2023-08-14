@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Minimap : MonoBehaviour
 {
-    //[SerializeField] private FirstPersonController fpsController;
     public Transform player;
+    PlayerMovement movement;
     private float cameraHeightOffset;
     [SerializeField] private Camera targetCamera;
     private float cameraHeight;
@@ -14,16 +14,17 @@ public class Minimap : MonoBehaviour
     private void Awake()
     {
         cameraHeightOffset = transform.position.y - player.position.y;
+        movement = player.GetComponent<PlayerMovement>();
     }
 
     private void LateUpdate()
     {
         //Make camera position.x and z same with player
         //Camera follows player
-        //if(!fpsController.isJumping())
-        //{
-        //    cameraHeight = cameraHeightOffset + player.position.y;
-        //}
+        if (movement.isGrounded)
+        {
+            cameraHeight = cameraHeightOffset + player.position.y;
+        }
 
         transform.position = new Vector3(player.position.x, cameraHeight, player.position.z);
 
