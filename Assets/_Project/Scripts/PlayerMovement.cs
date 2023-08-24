@@ -17,11 +17,6 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     [HideInInspector] public bool isGrounded;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

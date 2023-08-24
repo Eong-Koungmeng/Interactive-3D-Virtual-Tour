@@ -6,22 +6,27 @@ using UnityEngine;
 public class Minimap : MonoBehaviour
 {
     public Transform player;
-    PlayerMovement movement;
+    [SerializeField] PlayerMovement movement;
     private float cameraHeightOffset;
     [SerializeField] private Camera targetCamera;
     private float cameraHeight;
+    private bool automated;
 
     private void Awake()
     {
         cameraHeightOffset = transform.position.y - player.position.y;
-        movement = player.GetComponent<PlayerMovement>();
+
+        if(StateTransfer.tourType == "AutomatedTour")
+        {
+            automated = true;
+        }
     }
 
     private void LateUpdate()
     {
         //Make camera position.x and z same with player
         //Camera follows player
-        if (movement.isGrounded)
+        if (automated || movement.isGrounded)
         {
             cameraHeight = cameraHeightOffset + player.position.y;
         }
