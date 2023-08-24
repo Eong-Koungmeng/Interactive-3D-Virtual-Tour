@@ -18,6 +18,8 @@ public class ApplicationControlller : MonoBehaviour
         if(StateTransfer.tourType == "AutomatedTour")
         {
             DisableControl();
+            cameraControl.GetComponent<Animator> ().enabled = true;
+            cameraControl.GetComponent<Animator>().Play("CameraAnimation");
         }
 
         playingUI.SetActive(true);
@@ -76,6 +78,8 @@ public class ApplicationControlller : MonoBehaviour
     {
         cameraControl.GetComponent<MouseLook>().enabled = false;
         movementControl.GetComponent<PlayerMovement>().enabled = false;
+        cameraControl.GetComponent<Animator>().enabled = false;
+        movementControl.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
     }
 
 }
