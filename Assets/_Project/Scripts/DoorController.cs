@@ -5,6 +5,8 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     Animator animator;
+    [SerializeField]AudioSource doorOpenSound;
+    [SerializeField]AudioSource doorCloseSound;
     bool isOpen = false;
     bool inContact = false;
     // Start is called before the first frame update
@@ -23,11 +25,13 @@ public class DoorController : MonoBehaviour
                 if(isOpen)
                 {
                     animator.Play("DoorClose");
+                    doorCloseSound.Play();
                     isOpen = false;
                 }
                 else
                 {
                     animator.Play("DoorOpen");
+                    doorOpenSound.Play();
                     isOpen = true;
                 }
             }
