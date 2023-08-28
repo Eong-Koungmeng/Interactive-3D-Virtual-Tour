@@ -8,6 +8,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject startMenu;
     [SerializeField] private GameObject instruction;
     [SerializeField] private GameObject credit;
+    [SerializeField] private GameObject settings;
     public void LoadTour()
     {
         StateTransfer.tourType = "3DTour";
@@ -36,10 +37,17 @@ public class MenuController : MonoBehaviour
         instruction.SetActive(false);
         credit.SetActive(false);
         startMenu.SetActive(true);
+        settings.SetActive(false);
     }
     public void ShowCredits()
     {
         startMenu.SetActive(false);
         credit.SetActive(true);
+    }
+
+    public void ShowSettings()
+    {
+        startMenu.SetActive(false);
+        settings.SetActive(true);
     }
 }
