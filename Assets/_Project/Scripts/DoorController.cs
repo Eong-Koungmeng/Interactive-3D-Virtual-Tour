@@ -12,6 +12,8 @@ public class DoorController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        doorCloseSound.volume = StateTransfer.volume / 100;
+        doorOpenSound.volume = StateTransfer.volume / 100;
         animator = GetComponent<Animator>();
     }
 

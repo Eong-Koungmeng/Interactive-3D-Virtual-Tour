@@ -13,6 +13,7 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        mouseSensitivity = StateTransfer.sentitvity;
     }
 
     // Update is called once per frame

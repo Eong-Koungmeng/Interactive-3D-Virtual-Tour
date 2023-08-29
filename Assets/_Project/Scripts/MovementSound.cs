@@ -9,7 +9,10 @@ public class MovementSound : MonoBehaviour
 
     void Start()
     {
-        movement = GetComponent<PlayerMovement>();    
+        movement = GetComponent<PlayerMovement>();
+        footstepsSound.volume = StateTransfer.volume / 100;
+        sprintSound.volume = StateTransfer.volume / 100;
+        jumpSound.volume = StateTransfer.volume / 100;
     }
 
     // Update is called once per frame

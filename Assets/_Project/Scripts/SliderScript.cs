@@ -12,13 +12,9 @@ public class SliderScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slider.onValueChanged.AddListener((v) =>
-        {
-            sliderText.text = slider.value.ToString();
-        });
-
         if (sensitivity)
         {
+            slider.value = StateTransfer.sentitvity;
             slider.onValueChanged.AddListener((v) =>
             {
                 StateTransfer.sentitvity = (int)v;
@@ -26,11 +22,17 @@ public class SliderScript : MonoBehaviour
         }
         else
         {
+            slider.value = StateTransfer.volume;
             slider.onValueChanged.AddListener((v) =>
             {
                 StateTransfer.volume = (int)v;
             });
         }
+        sliderText.text = slider.value.ToString();
+        slider.onValueChanged.AddListener((v) =>
+        {
+            sliderText.text = slider.value.ToString();
+        });
     }
 
 }
