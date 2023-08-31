@@ -5,6 +5,6 @@ using UnityEngine;
 public class StateTransfer : MonoBehaviour
 {
     static public string tourType;
-    static public int sentitvity;
-    static public int volume;
+    static public int sentitvity = 200;
+    static public int volume = 100;
 }

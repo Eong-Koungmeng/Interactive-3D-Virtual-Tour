@@ -9,6 +9,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject instruction;
     [SerializeField] private GameObject credit;
     [SerializeField] private GameObject settings;
+
     public void LoadTour()
     {
         StateTransfer.tourType = "3DTour";
