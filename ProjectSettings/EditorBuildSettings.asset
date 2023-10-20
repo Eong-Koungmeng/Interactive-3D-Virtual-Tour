@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/MainScene.unity
     guid: 37db3641b1e27c5418fdaa6c9ee300a8
+  - enabled: 1
+    path: Assets/_Project/Scenes/MainScene STEM.unity
+    guid: f2dae56155aee4b4ca72401d73cdf33a
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 2a7f27ccf55babd4c89a01131f2cf81e, type: 2}

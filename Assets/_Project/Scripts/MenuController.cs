@@ -9,11 +9,24 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject instruction;
     [SerializeField] private GameObject credit;
     [SerializeField] private GameObject settings;
+    [SerializeField] private GameObject virtualTourOption;
 
     public void LoadTour()
     {
+        startMenu.SetActive(false);
+        virtualTourOption.SetActive(true);
+    }
+
+    public void LoadIDT()
+    {
         StateTransfer.tourType = "3DTour";
         SceneManager.LoadScene("MainScene");
+    }
+
+    public void LoadSTEM()
+    {
+        StateTransfer.tourType = "3DTour";
+        SceneManager.LoadScene("MainScene STEM");
     }
 
     public void LoadAutomated()
@@ -39,6 +52,7 @@ public class MenuController : MonoBehaviour
         credit.SetActive(false);
         startMenu.SetActive(true);
         settings.SetActive(false);
+        virtualTourOption.SetActive(false);
     }
     public void ShowCredits()
     {
