@@ -19,7 +19,14 @@ public class ApplicationControlller : MonoBehaviour
         {
             DisableControl();
             cameraControl.GetComponent<Animator> ().enabled = true;
-            cameraControl.GetComponent<Animator>().Play("CameraAnimation");
+            if(StateTransfer.buildingName == "IDT")
+            {
+                cameraControl.GetComponent<Animator>().Play("CameraAnimation");
+            }
+            else
+            {
+                cameraControl.GetComponent<Animator>().Play("STEMAnimation");
+            }
         }
 
         playingUI.SetActive(true);

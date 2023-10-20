@@ -10,6 +10,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject credit;
     [SerializeField] private GameObject settings;
     [SerializeField] private GameObject virtualTourOption;
+    [SerializeField] private GameObject _AvirtualTourOption;
 
     public void LoadTour()
     {
@@ -20,19 +21,35 @@ public class MenuController : MonoBehaviour
     public void LoadIDT()
     {
         StateTransfer.tourType = "3DTour";
+        StateTransfer.buildingName = "IDT";
         SceneManager.LoadScene("MainScene");
     }
 
     public void LoadSTEM()
     {
         StateTransfer.tourType = "3DTour";
+        StateTransfer.buildingName = "STEM";
         SceneManager.LoadScene("MainScene STEM");
     }
 
     public void LoadAutomated()
     {
+        startMenu.SetActive(false);
+        _AvirtualTourOption.SetActive(true);
+    }
+
+    public void LoadAutomatedIDT()
+    {
         StateTransfer.tourType = "AutomatedTour";
+        StateTransfer.buildingName = "IDT";
         SceneManager.LoadScene("MainScene");
+    }
+
+    public void LoadAutomatedSTEM()
+    {
+        StateTransfer.tourType = "AutomatedTour";
+        StateTransfer.buildingName = "STEM";
+        SceneManager.LoadScene("MainScene STEM");
     }
 
     public void QuitApp()
@@ -53,6 +70,7 @@ public class MenuController : MonoBehaviour
         startMenu.SetActive(true);
         settings.SetActive(false);
         virtualTourOption.SetActive(false);
+        _AvirtualTourOption.SetActive(false);
     }
     public void ShowCredits()
     {
